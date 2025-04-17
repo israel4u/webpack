@@ -34,6 +34,10 @@
 
   &__title {
     font-size: 1.125rem;
+
+    &--desc {
+      font-weight: 300;
+    }
   }
 
   // &__body-text{}
@@ -52,5 +56,13 @@
 
   &__label{
     font-weight: 700;
+  }
+
+  &__description {
+
+
+    &--skill {
+      font-weight: 600;
+    }
   }
 }
