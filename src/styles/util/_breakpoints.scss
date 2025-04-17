@@ -1,0 +1,17 @@
+@use "sass:map";
+
+// $config: (a: (b: (c: d)));
+// @debug map.get($config, a, b, c); // d
+
+// 700px, 900px, 1920px;
+$breakpoints-up: (
+  "medium": 700px,
+  "large": 900px,
+  "xlarge": 1920px,
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map.get($breakpoints-up, $size)) {
+    @content;
+  }
+}

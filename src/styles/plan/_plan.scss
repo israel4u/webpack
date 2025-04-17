@@ -1,0 +1,53 @@
+@use '../util' as b;
+
+.plan {
+  background-color: var(--lighterGreen);
+  text-align: center;
+
+  &__contents {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+  }
+
+  &__pricing {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__subhead {
+    margin-bottom: 2rem;
+  }
+
+  &__svg {
+    color: var(--green);
+    margin-bottom: 1rem;
+  }
+
+  &__title, &__price {
+    margin-bottom: 0.2rem;
+  }
+
+
+  &__title {
+    font-size: 1.3rem;
+  }
+
+  &__option {
+    font-weight: 200;
+    margin-bottom: 1rem;
+  }
+
+
+  @include b.breakpoint(medium) {
+    &__heading {
+      text-align: left;
+    }
+
+    &__contents {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+  }
+}

@@ -17,11 +17,12 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist'),
+      directory: path.resolve(__dirname, 'src'),
     },
     port: 3000,
     open: true,
-    host: "local-ip",
+    hot: true,
+    // host: "local-ip",
     compress: true,
     historyApiFallback: true,
   },
@@ -42,8 +43,8 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env']
-          }
-        }
+          },
+        },
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -53,10 +54,10 @@ module.exports = {
   },
   plugins: [
     new HtmlpackPlugin ({
-      title: 'Webpack App',
+      title: 'Shola Israel | UI/UX & Web Developer',
       filenmae: 'index.html',
       template: 'src/template.html',
     }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ]
 }

@@ -1,0 +1,19 @@
+@use '../util' as u;
+
+.section {
+  padding-block: 5rem;
+
+  &__full-width {
+    width: 100%;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  &__bleedarea {
+    margin-inline: 1rem;
+  }
+  
+}

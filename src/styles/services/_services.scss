@@ -1,0 +1,37 @@
+@use '../util' as b;
+
+
+
+.services {
+
+  background-color: var(--lighterGreen);
+
+  text-align: center;
+  padding-top: 2rem;
+
+  @include b.breakpoint(medium) {
+    text-align: left;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 2rem;
+    
+
+    @include b.breakpoint(medium) {
+      text-align: left;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 2.5rem;
+    }
+  }
+
+  &__task {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: inset 0px -1px 3px var(--gray);
+    padding: 1.5rem 2rem;
+  }
+}

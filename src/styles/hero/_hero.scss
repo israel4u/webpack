@@ -1,0 +1,88 @@
+@use '../util' as u;
+
+.hero {
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 2rem;
+    align-items: center;
+    margin-top: 5rem;
+  }
+
+    &__left {
+    flex: 2;
+    }
+
+    &__text {
+      text-align: center;
+      font-size: 21px;
+      font-weight: 300;
+    }
+  
+
+  &__greeting{
+    font-weight: 300;
+    font-size: 21px;
+    margin-bottom: 0;
+  }
+
+  &__post {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  &__sub-desc {
+    display: block;
+    font-size: 21px;
+    font-weight: 300;
+  }
+
+  &__socials {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    margin-top: 2rem;
+    
+    
+    @include u.breakpoint(medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 0;
+  }
+  
+  @include u.breakpoint(medium) {
+
+    &__content {
+      flex-direction: row;
+      justify-items: center;
+      row-gap: none;
+    }
+
+    &__text,
+    &__socials {
+      text-align: left;
+    }
+
+    &__socials {
+      display: flex;
+      justify-content: left;
+    }
+
+    &__social {
+      border-right: 1px solid var(--dark);
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    &__social:first-child {
+      padding-left: 0;
+    }
+  }
+  
+}

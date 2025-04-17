@@ -1,0 +1,56 @@
+@use '../util' as b;
+
+.personal {
+
+  background-color: var(--lightGray);
+
+  &__content {
+    @include b.breakpoint(medium) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 3rem;
+    }
+  }
+
+
+  &__img {
+    display: none;
+
+    @include b.breakpoint(medium) {
+      display: flex;
+    }
+  } 
+
+  &__faq{
+    flex: 1;
+    
+  }
+
+  &__info {
+    color: var(--green);
+    font-size: 1.25rem;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+  }
+
+  // &__body-text{}
+  // &__description{}
+  &__summary{
+
+    @include b.breakpoint(medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  &__full-desc{
+    display: flex;
+    column-gap: 0.5rem;
+  }
+
+  &__label{
+    font-weight: 700;
+  }
+}

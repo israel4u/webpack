@@ -1,0 +1,109 @@
+@use '../util' as u;
+
+.contact {
+
+  background-color: var(--lighterGreen);
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 2rem;
+    // margin-left: 5rem;
+
+
+    @include u.breakpoint(medium) {
+      position: relative;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 4rem;
+      row-gap: 0;
+      align-items: center;
+    }
+
+  }
+
+  &__form {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4 1fr);
+    grid-column: auto;
+    
+    margin-bottom: 1rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    background-color: var(--grayish);
+    border: none;
+  }
+
+  input {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__desc {
+    margin-bottom: 2rem;
+  }
+
+  &__info {
+    display: flex;
+    column-gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__svg {
+    color: var(--green);
+  }
+
+  &__label {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    
+    @include u.breakpoint(medium) {
+      position: absolute;
+        flex-direction: column;
+        row-gap: 5vh;
+      top: 20%;
+      left: -8%;
+    }
+  }
+
+  &__follow {
+    
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    
+    @include u.breakpoint(medium) {
+      transform: rotate(90deg);
+
+    }
+  }
+
+  &__handles {
+    text-align: center;
+    svg {
+      margin-right: 1rem;
+    }
+      cursor: pointer;
+    
+    @include u.breakpoint(medium) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+      text-align: none;
+        svg {
+          margin-right: 0;
+        }
+    }
+  }
+
+}

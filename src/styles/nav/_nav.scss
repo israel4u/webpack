@@ -1,0 +1,119 @@
+@use '../util' as b;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  &__container {
+  }
+  &__nav {
+    
+  }
+  
+  
+  @include b.breakpoint(medium) {
+    background-color: var(--navGreen);
+  }
+
+  &--is-expanded {
+    background-color: var(--navGreen);
+  }
+  
+
+  &__links {
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all .5s ease-out;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    text-align: center;
+    padding-block: 3rem;
+
+
+    &--is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @include b.breakpoint(medium) {
+      opacity: 1;
+      flex-direction: row;
+      row-gap: 0;
+      flex-wrap: wrap;
+      padding-block: 1rem;
+      transform: scale(1);
+    }
+  }
+
+  &__anchor {
+    color: var(--white);
+  }
+
+  &__mobile{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    width: 20px;
+    height: 19px;
+    // z-index: 111;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: yellow;
+      transform-origin: 0 0;
+      transition: transform .3s ease-out;
+    }
+
+    &-middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: yellow;
+      transition: all .3s ease-out;
+      transform-origin: 0 50%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: yellow;
+      transform-origin: 0 100%;
+      transition: transform .3s ease-out;
+    }
+
+    @include b.breakpoint(medium) {
+        opacity: 0;
+        z-index: -1;
+    }
+
+    &-icon--close-x {
+      &::before {
+       transform: rotate(45deg) scaleX(1.25);
+      }
+
+      .header__mobile-middle {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      &::after {
+        transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+      }
+    }
+  }  
+}

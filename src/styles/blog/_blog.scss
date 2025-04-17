@@ -1,0 +1,37 @@
+@use '../util' as b;
+
+.blog {
+
+ 
+
+  &__posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 2rem;
+
+
+    @include b.breakpoint(medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 2rem;
+      row-gap: 0;
+    }
+  }
+
+  &__img {
+    margin-bottom: 0.5rem;
+  }
+
+  &__content {
+    margin-bottom: 1rem;
+  }
+
+  &__topic {
+    margin-bottom: 0.5rem;
+  }
+
+  &__all-blogs {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,24 @@
+@use '../util' as b;
+.portfolio {
+
+  &__contents {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    overflow: hidden;
+
+    p {
+      font-weight: 600;
+    }
+
+    
+
+    @include b.breakpoint(medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+
+}

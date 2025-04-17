@@ -1,0 +1,38 @@
+@use '../util' as b;
+
+.teams {
+
+  background-color: var(--lighterGreen);
+
+  &__contents {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      row-gap: 2rem;
+    
+      @include b.breakpoint(medium) {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+        row-gap: 0;
+      }
+  }
+
+  &__content{
+    // grid-auto-columns: auto;
+    // grid-auto-rows: auto;
+  }
+
+  &__img {
+    border: 1px solid yellow;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    text-align: center;
+  }
+
+  &__name {
+    margin-bottom: 0;
+  }
+}
