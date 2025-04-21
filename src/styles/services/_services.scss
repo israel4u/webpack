@@ -34,4 +34,9 @@
     box-shadow: inset 0px -1px 3px var(--gray);
     padding: 1.5rem 2rem;
   }
+
+  &__sub-section {
+    display: flex;
+    justify-content: space-around;
+  }
 }
